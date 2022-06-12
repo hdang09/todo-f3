@@ -4,6 +4,7 @@ function App() {
   const [inputValue, setInputValue] = useState('')
   const [tasks, setTasks] = useState(JSON.parse(window.localStorage.getItem('tasks')) || [])
   const [editIndex, setEditIndex] = useState(false)
+  
   const inputRef = useRef()
   const buttonRef = useRef()
 
