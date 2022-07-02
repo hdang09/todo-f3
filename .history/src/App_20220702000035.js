@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Welcome from './components/Welcome';
-import Todo from './Todo';
+import Todo from './components/Todo';
 import LogIn from './components/LogIn';
 
+const fs = require('fs');
+
 function App() {
+    console.log(fs);
     const [loggedIn, setLoggedIn] = useState(false);
 
     const handleSetLoggedIn = () => {

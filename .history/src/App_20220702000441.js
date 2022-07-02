@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Welcome from './components/Welcome';
-import Todo from './Todo';
+import Todo from './components/Todo';
 import LogIn from './components/LogIn';
+import axios from 'axios';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+        axios.get('/data.json').then((res) => console.log(res));
+    }, []);
 
     const handleSetLoggedIn = () => {
         setLoggedIn(true);

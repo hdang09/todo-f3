@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Welcome from './components/Welcome';
@@ -7,6 +7,12 @@ import LogIn from './components/LogIn';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+        fetch('D:/CODE/ReactJS/todo-f3/src/data.json')
+            .then((res) => res.json())
+            .then((res) => console.log(res));
+    }, []);
 
     const handleSetLoggedIn = () => {
         setLoggedIn(true);

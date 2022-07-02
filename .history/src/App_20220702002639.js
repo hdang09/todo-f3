@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Welcome from './components/Welcome';
@@ -7,6 +8,12 @@ import LogIn from './components/LogIn';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+        axios('./emloyee.json')
+            .then((res) => res.json())
+            .then((res) => console.log(res));
+    }, []);
 
     const handleSetLoggedIn = () => {
         setLoggedIn(true);
