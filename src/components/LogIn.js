@@ -12,7 +12,7 @@ function LogIn({ func }) {
                 <input type="password" />
             </div>
             <Link to="/" onClick={func}>
-                <button>Submit</button>
+                <button>Login</button>
             </Link>
         </form>
     );
